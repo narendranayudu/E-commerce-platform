@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/IMAGES/images/narasimha bg_setup.jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign_up  Details </title>
+    <style>
+        body {
+            background-image: url('/IMAGES/images/narasimha\ bg_setup.jpg');
+          display: flex;
+          background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+        }
+      .pinf {
+        position: relative;
+        align-items: center;
+        right: 80vh;
+        top: 25vh;
+      }
+      .p2 {
+        position: relative;
+        align-items: center;
+        left: 115vh;
+      }
+      .pI {
+        position: fixed;
+        border: transparent;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+        line-height: 5.25vh;
+        word-spacing: 3.5px;
+        letter-spacing: 1px;
+      }
+      .Pi {
+        font-family: 'Times New Roman', Times, serif;
+        position: fixed;
+        border: transparent;
+        font-size: 30px;
+        line-height: 5vh;
+        word-spacing: 4px;
+        letter-spacing: 1.75vh;
+      }
+      input {
+        font-size: 18px;
+      }
+      input:hover {
+        font-size: 20px;
+        border-radius: 10px;
+      }
+      .warning {
+        color: red;
+    }
+    .hidden {
+        display: none;
+      }
+      .Sip {
+        margin-left: 50px;
+        font-size: 20px;
+        border-radius: 5px solid red; 
+        box-shadow: 0 5px 8px 4px rgba(94, 50, 50, 0.499);
+        cursor:pointer;
+      }
+    </style>
+</head>
+<body>
+    <div class="pinf">
+        <fieldset class="pI">
+            <form action="" autocomplete="off">
+            NAME : <input type="text" name="" id="Name"><br>
+            Last name: <input type="text" name="" id="Ln"><br>
+            Dob : <input type="date" name="" id="date"><br>
+            Location: <input type="text" name="" id="loc"><br><span style="margin-left: 75px;">or</span><br>
+            <button type="button" onclick="Location()" class="loc" style="margin-left: 50px;font-size: 20px;border-radius: 5px solid red; box-shadow: 0 5px 8px 4px rgba(94, 50, 50, 0.499);cursor:pointer">Location finder</button><br>
+            <span id="map"></span>
+        </form>
+        </fieldset>
+        <div class="p2">
+            <fieldset class="Pi">
+                <form action="" autocomplete="off">
+                username  
+                <!-- <span  id="nameWarning" class="hiddden warning">x</span> -->
+                 <br> <input type="text" name="" id="username"><br>
+                password <br> <input type="password" name="" id="pw"><br>
+                confirm <br> <input type="password" name="" id="cp"><br><br>
+                <button type="submit" onclick="Sp()" class="Sip" style="font-size: 30px;border-radius: 10px;">Sign-up</button>
+            </form>
+            </fieldset>
+            <script>
+                function Sp() {
+                    var USERNAME = document.getElementById('username').value;
+                    var PW = document.getElementById('pw').value;
+                    var CP = document.getElementById('cp').value;
+
+                    if (USERNAME == ""){
+                        alert("please check the username");
+                }
+                if (PW != CP) {
+                    alert('please check the password');
+                } 
+            }
+            </script>
+        </div>
+    </div>
+    <script src="/JAVASCRIPT/location.js"></script>
+</body>
+</html>
