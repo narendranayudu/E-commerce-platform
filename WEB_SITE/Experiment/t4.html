@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #timer {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #startButton, #stopButton {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+    <button id="startButton" onclick="startTimer()">Start</button>
+    <button id="stopButton" onclick="stopTimer()">Stop</button>
+
+    <script>
+        let timerInterval;
+        let startTime;
+        let elapsedTime = 0; // Variable to store the elapsed time when timer is stopped
+
+        function startTimer() {
+            startTime = new Date().getTime() - elapsedTime; // Adjust start time by elapsed time
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+            elapsedTime = new Date().getTime() - startTime; // Calculate elapsed time
+        }
+
+        function updateTimer() {
+            const currentTime = new Date().getTime();
+            elapsedTime = currentTime - startTime; // Update elapsed time
+            const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+            const formattedTime = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
+            document.getElementById("timer").innerText = formattedTime;
+        }
+
+        function pad(num) {
+            return num < 10 ? "0" + num : num;
+        }
+    </script>
+</body>
+</html>

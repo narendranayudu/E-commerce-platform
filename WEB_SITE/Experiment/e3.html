@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Work Timer</title>
+</head>
+<body>
+
+<h1>Employee Work Timer</h1>
+
+<div id="timer">00:00:00</div>
+<button id="startButton">Start</button>
+<button id="stopButton">Stop</button>
+
+<script>
+let startTime;
+let timerInterval;
+
+const timerDisplay = document.getElementById('timer');
+const startButton = document.getElementById('startButton');
+const stopButton = document.getElementById('stopButton');
+
+function startTimer() {
+  startTime = new Date().getTime();
+
+  // Update the timer every second
+  timerInterval = setInterval(updateTimer, 1000);
+
+  startButton.disabled = true;
+  stopButton.disabled = false;
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+
+  startButton.disabled = false;
+  stopButton.disabled = true;
+}
+
+function updateTimer() {
+  const currentTime = new Date().getTime();
+  const elapsedTime = currentTime - startTime;
+
+  const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+  const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+  const formattedTime = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  timerDisplay.textContent = formattedTime;
+}
+
+function pad(number) {
+  if (number < 10) {
+    return '0' + number;
+  }
+  return number;
+}
+
+startButton.addEventListener('click', startTimer);
+stopButton.addEventListener('click', stopTimer);
+</script>
+
+</body>
+</html>

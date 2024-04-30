@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Minimize Rows/Columns</title>
+</head>
+<body>
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="addCol()">Add Column</button>
+    <button onclick="minRow()">Minimize Row</button>
+    <button onclick="minCol()">Minimize Column</button>
+    <table id="myTable" border="1">
+        <tr>
+            <td>Row 1, Column 1</td>
+            <td>Row 1, Column 2</td>
+        </tr>
+        <tr>
+            <td>Row 2, Column 1</td>
+            <td>Row 2, Column 2</td>
+        </tr>
+    </table>
+
+    <script>
+        function addRow() {
+    var table = document.getElementById("myTable");
+    var newRow = table.insertRow();
+    var cells = table.rows[0].cells.length;
+    for (var i = 0; i < cells; i++) {
+        var cell = newRow.insertCell();
+        cell.innerHTML = "New Row, Column " + (i + 1);
+    }
+}
+
+function addCol() {
+    var table = document.getElementById("myTable");
+    for (var i = 0; i < table.rows.length; i++) {
+        var cell = table.rows[i].insertCell();
+        cell.innerHTML = "New Column";
+    }
+}
+
+function minRow() {
+    var table = document.getElementById("myTable");
+    var rows = table.rows.length;
+    if (rows > 0) {
+        table.deleteRow(rows - 1);
+    }
+}
+
+function minCol() {
+    var table = document.getElementById("myTable");
+    var cells = table.rows[0].cells.length;
+    for (var i = 0; i < table.rows.length; i++) {
+        table.rows[i].deleteCell(cells - 1);
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NARASIMHA PVT LTD</title>
+   <link rel="shortcut icon" href="/IMAGES/images/NARASIMHA PVT LTD.jpg" type="image/x-icon">
+    <style>
+        body {
+            background-repeat: no-repeat;
+            border-image: fill;
+            align-items: center;
+            font-display: flex;
+            width: auto;
+        }
+        .logo {
+            padding-top: 100px;
+            padding-left: 200px;
+        }
+        .login {
+            letter-spacing: 5px;
+            font-stretch: 5px;
+            line-height: 40px;
+            font-size: 30px;
+            text-align: center;
+            margin-top: -400px;
+            padding-left: 250px;
+        }
+        input{
+            font-size: 25px;
+        }
+        input:hover {
+            font-size: 40px;
+            border-radius: 12px;
+        }
+        .l1 {
+            padding-right: 30px;
+            margin-right: 200px;
+            margin-top: 25px;
+            height: 5px;
+            background-color: black;
+            border-radius: 15px;
+        }
+        .sn {
+            background-color: rgba(191, 171, 171, 0.844);
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 10px 70px 15px 70px;
+        }
+        .sn:hover {
+            font-size: 30px;
+            padding-left: 90px;
+            padding-right: 90px;
+        }
+        .sp {
+            background-color: rgba(191, 171, 171, 0.844);
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 10px 70px 15px 70px;
+        }
+        .sp:hover {
+            font-size: 30px;
+            padding-left: 90px;
+            padding-right: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="/IMAGES/images/NARASIMHA PVT LTD.jpg" alt="lion" srcset="">
+        <div class="login">
+            <label for="name">Name </label> <br>
+            <input type="text" name="" class="name" id="name" autocomplete="off"><br>
+            <label for="password">Password </label><br>
+            <input type="password" name="" class="password" id="password" autocomplete="off"><br>
+            <hr class="l1"><br>
+            <button type="button" onclick="Sign()" class="sn" id="sn">sign-in</button> <button type="button" onclick="Sigp()" class="sp" id="sp">Sign-up</button><br><br>
+        </div>
+    </div>
+    <!-- <script src="/JAVASCRIPT/sign.js"></script> -->
+
+    <script>
+        
+function Sign() {
+    var PASSWORD = document.getElementById('password').value;
+    var NAME = document.getElementById('name').value;
+
+    if (NAME == "") {
+        alert('please check the name');
+    } 
+    else if (PASSWORD == "") {
+       alert('please enetr the passwoord\npassword must contain 6 characters');
+   }
+}
+
+function Sigp() {
+    window.location.href = "Sign_up.html";
+}
+
+
+
+    </script>
+</body>
+</html>

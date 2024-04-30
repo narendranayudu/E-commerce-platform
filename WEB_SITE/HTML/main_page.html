@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NARASIMHA PVT LTD</title>
+    <link rel="shortcut icon" href="/IMAGES/images/NARASIMHA PVT LTD.jpg" type="image/x-icon">
+    <style>
+        body {
+           font-display: flex;
+           width: auto;
+           margin: 0;
+           padding: 0;
+        }
+        nav {
+            margin-left: -7px;
+            margin-right: -7px;
+            font-size: 20px;
+            margin-top: -20px;
+            text-align: right;
+            word-spacing: 10px;
+            position: relative;
+        }
+        ul {
+            background-color: black;
+            list-style-type: none;
+        }
+        li {
+            display: inline;
+        }
+        li a {
+            padding-right: 10px;
+            text-decoration-line: none;
+            color: white;
+            letter-spacing: 4px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        a:hover {
+            cursor: pointer;
+            color: rgb(180, 28, 191);
+            font-size: 22px;
+            text-size-adjust: 20px;
+            text-overflow: inherit;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            top: 20px;
+            position: fixed;
+            background-color: #514633a8;
+            padding-top: 60px;
+            transition: left 0.3s ease;
+            left: 0; /* Set to 0 to position it on the left side */
+            overflow-y: hidden;
+        }
+       .buttons {
+        margin-top: -30px;
+        position: fixed;
+        align-items: center;
+        padding-left: 10px;
+       }
+       button[type=button] {
+        background-color: rgba(88, 76, 76, 0.739);
+        font-size: 15px;
+        align-items: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        word-spacing: 2.5px;
+        letter-spacing: 3px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 15px 10px 10px 15px;
+       }
+       button[type=button]:hover {
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: rgb(100, 141, 176);
+       }
+       .sd2 {
+        position: fixed;
+        right: 0;
+        height: 100%;
+        border: 2px solid rgba(0, 0, 255, 0.019);
+        top: 25px;
+        width: 80%;
+        margin-right: 30px;
+       }
+       .time {
+        border-radius: 25px;
+        text-align: center;
+        background-color: rgb(118, 184, 184);
+        position: fixed;
+        font-size: 50px;
+        top: 500px;
+        left: 20px;
+       }
+       .sp {
+        margin-top: 280px;
+        position: fixed;
+        font-size: 15px;
+       }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="l1">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Images</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </nav><br>
+    <div>
+        <div class="sidebar">
+            <div class="buttons">
+                <button type="button" class="Cl" id="Cl" onclick="ClientList()">Clients List</button><br>
+                <button type="button" id="UpP" onclick="UpP()">Upcoming Projects</button><br>
+                <button type="button" id="Note" onclick="Note()">Notes</button><br>
+                <button type="button" id="cml" onclick="meeting()">Client meeting list</button><br>
+                <button type="button" id="cf" onclick="clientFeed()">Client's feedback</button>
+                <div class="time">
+                    <div id="timer">00:00:00</div>
+                   
+                </div>
+            </div>
+        </div><br>
+    <div class="sd2">
+        <div id="content"></div>
+    </div>
+    </div>
+</body>
+</html>
