@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>NAREDRA NAYUDU</title>
+    <style>
+        * {
+            /* dark-theme */
+            --dark-bgcolor : black;
+            --dcolor : white;
+
+            /* light-theme */
+            --light-bgcolor : white; 
+            --lcolor : black;
+
+        }
+        body {
+            display: block;
+             background-size: 100% 100%;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            flex-wrap: wrap;
+            place-items: end space-between;
+        }
+        body::after {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        .introduction {
+            width: fit-content;
+            position: relative;
+            top: 200px;
+            padding: 0;
+            margin-left: 100px;
+        }
+        .hi {
+            font-size: 140px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 1000;
+            animation: HI 5s ;
+        }
+        p {
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 1000;
+            animation: P 9s;
+        } 
+        .indetail {
+            font-size: 30px;
+            animation: detail 5s;
+            font-weight: 800;
+            letter-spacing: 7px;
+        }
+        .img1 {
+            position:relative;
+           float: right;
+           max-width: 50%;
+           height: 500px;
+          right: 70px;
+           border-radius: 100px 100px;
+           animation: image1;
+           animation-duration: 6s;
+        }
+        .buttons {
+            margin-left: 50px;
+            padding-top: 40px;
+        }
+        button {
+            background-color: rgb(40, 132, 132);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bolder;
+            display:inline-flexbox;
+            margin-right: 20px;
+            letter-spacing: 5px;
+            animation: Button;
+            animation-duration: 5s;
+            transition: 
+           scale 0.25s ease-in,
+           opacity 0.25s ease-in,
+           filter 0.25s ease-in;
+
+           &:hover {
+            scale: 1.2;
+           }
+        }
+        button:hover {
+            background-color: rgb(86, 129, 115);
+            cursor: pointer;
+        }
+        .buttons:has(.button[type=button]:hover) button[type=button]:not(:hover) {
+        scale: 0.8;
+        opacity: 0.8;
+        filter: blur(4px);
+       }
+        .intro {
+            padding-top: -10px;
+            font-size: 25px;
+            font-weight: 800;
+            animation-name: Intro;
+            animation-duration: 12s;
+            animation-delay: -3s;
+            animation-direction: ease-in;
+        }
+
+        @keyframes P {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes HI   {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 2;
+            }
+        }
+
+        @keyframes Intro {
+           0% {
+            font-size: 10px;
+            opacity: 0;
+           } 
+           100% {
+            font-size: 25px;
+            opacity: 1;
+           }
+        }
+
+        @keyframes Button {
+            0% {
+                opacity: 0;
+                animation-iteration-count: 8;
+                animation-fill-mode: forwards;
+                font-size: 15px;
+            }
+        }
+        
+        @keyframes image1 {
+            0% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+</style>
+</head>
+<body>
+   <div class="About information">
+       <img class="img1" src="/WEB_SITE/IMAGES/images/clg pic.jpg">
+       <div class="introduction">
+           <p><span class="hi">Hi..!</span><br>This is NARENDRA NAYUDU., <br><span class="indetail">A Developer/ Business Adviser.</span></p> 
+           <span class="intro">Business analysis is the cornerstone of making informed decisions that drive growth and succes.</span><br><br>
+           <div class="buttons">
+            <button>About <i class="fa-solid fa-address-card"></i></button>
+            <button>Projects <i class="fa-solid fa-list-check"></i></button>
+            <button>Ressume <i class="fa-duotone fa-file"></i></button>
+            <button>Contact <i class="fa-solid fa-address-book"></i></button>
+           </div>
+        </div>
+   </div>
+</body>
+</html>
